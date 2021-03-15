@@ -15,6 +15,8 @@ docker run --name bemol_postgres -e POSTGRES_PASSWORD=bemol -d postgres
 docker inspect bemol_postgres
 ```
 
+![Instalação Dbeaver](https://github.com/jnerydesigner/bemol-challenge-api/blob/main/images/.xdp_shot-da-tela-docker.png)
+
 - Após rodar o comando do docker, verifique o ormconfig.json, e altere a opção host e coloque o IP que você guardou do container acima
 
 ```
@@ -43,6 +45,8 @@ docker inspect bemol_postgres
 * [Dbeaver](https://dbeaver.io/download/) para download.
 
 - Instale o Dbeaver, siga as instruções para acesso ao banco, e logo após se conectar com a conexão padrão, crie um banco de dados com o nome "bemol_relation"
+![Instalação Dbeaver](https://github.com/jnerydesigner/bemol-challenge-api/blob/main/images/instalacao-dbeaver.png)
+![Instalação Dbeaver](https://github.com/jnerydesigner/bemol-challenge-api/blob/main/images/instalacao-dbeaver-teste-conexao.png)
 
 - Nesse momento vamos rodar o comando para gerar nossas migrations
 
@@ -74,6 +78,8 @@ docker inspect id_do_container
 ```
 ip_do_container:porta_qualquer
 ```
+
+![Instalação Dbeaver](https://github.com/jnerydesigner/bemol-challenge-api/blob/main/images/final-bakcend.png)
 
 🏂 - Se tudo deu certo colocamos nosso backend no ar.
 
