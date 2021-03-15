@@ -11,5 +11,5 @@ app.use(routes);
 app.get('/', (req, res) => res.json({ message: 'Hello Word' }));
 
 app.listen(3333, () => {
-  console.log('server started on port 3333');
+  console.log(`server started on port 3333 🔥 `);
 });

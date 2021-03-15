@@ -1,12 +1,19 @@
 import { Router } from 'express';
 import CreateClientService from '../services/CreateClientService';
 import UpdateClientService from '../services/UpdateClientService';
+import ResultsClientService from '../services/ResultsClientService';
 import UpdateEnderecoClientService from '../services/UpdateEnderecoClientService';
 
 const clientRouter = Router();
 
 clientRouter.get('/results/:email', async (req, res) => {
-  return res.json(res);
+  const { email } = req.params;
+
+  const searchClient = new ResultsClientService();
+  const client = await searchClient.execute({
+    email,
+  });
+  return res.json(client);
 });
 
 clientRouter.post('/', async (req, res) => {

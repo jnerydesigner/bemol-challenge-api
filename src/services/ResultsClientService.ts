@@ -8,6 +8,7 @@ interface Request {
 class CreateClientService {
   public async execute({ email }: Request): Promise<Client | undefined> {
     const clientRepository = getRepository(Client);
+
     const findClient = await clientRepository.findOne({
       email,
     });
