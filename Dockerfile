@@ -1,3 +1,10 @@
+FROM postgres as db_bemol
+
+EXPOSE 5432
+
+WORKDIR /usr/src/app/db
+
+
 FROM node:15.11.0-alpine
 
 WORKDIR /usr/src/app

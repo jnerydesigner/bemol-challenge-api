@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  bemol-db:
+    image: postgres
+    container_name: bemol-db
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRESQL_USERNAME}
+      POSTGRESQL_PASSWORD: ${POSTGRESQL_PASSWORD}
+      POSTGRES_DB: ${POSTGRESQL_DATABASE}
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data/pgdata
+
+  bemol-api:
+    image: node:14-alpine
+    container_name: bemol-api
+    restart: always
+    build: .
+    ports:
+      - ${SERVER_PORT}:${SERVER_PORT}
+    volumes:
+      - .:/usr/src/app
+    depends_on:
+      - bemol-db
+
+
